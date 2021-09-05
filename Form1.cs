@@ -17,19 +17,15 @@ namespace ShowGifOnly
         private Point dragFormPoint;
         public Form1()
         {
-
-
             this.TopMost = true;
-
             InitializeComponent();
-
         }
 
 
         protected override void OnLoad(EventArgs e)
         {
             var screen = Screen.FromPoint(this.Location);
-            this.Location = new Point(screen.WorkingArea.Left - 10, screen.WorkingArea.Bottom - this.Height + 65);
+            this.Location = new Point(screen.WorkingArea.Left - 15, screen.WorkingArea.Bottom - this.Height + 70);
             base.OnLoad(e);
         }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -56,6 +52,7 @@ namespace ShowGifOnly
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Focus();
+            this.TopMost = true;
         }
     }
 }
